@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f0ff 0%, #f0e6ff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ========== QUIZ CONTAINER (card) ========== */
+.quiz-container {
+    background: #ffffff;
+    max-width: 620px;
+    width: 100%;
+    padding: 40px 36px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-container h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* ========== START / RESTART BUTTON ========== */
+.btn-start {
+    background-color: #1565c0;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 14px 48px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-start:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.btn-start:active {
+    transform: translateY(0);
+}
+
+/* ========== PROGRESS BAR ========== */
+.progress-section {
+    margin-bottom: 28px;
+}
+
+.progress-text {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e8eaf6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #42a5f5, #1565c0);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* ========== QUESTION TEXT ========== */
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #212121;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* ========== OPTIONS ========== */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-option {
+    width: 100%;
+    padding: 14px 20px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.btn-option:hover:not(:disabled) {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+    transform: translateX(4px);
+}
+
+.btn-option:disabled {
+    cursor: default;
+}
+
+/* ========== ANSWER FEEDBACK ========== */
+.btn-option.correct {
+    background-color: #c8e6c9;
+    border-color: #43a047;
+    color: #1b5e20;
+    font-weight: 600;
+}
+
+.btn-option.wrong {
+    background-color: #ffcdd2;
+    border-color: #e53935;
+    color: #b71c1c;
+    font-weight: 600;
+}
+
+/* ========== NEXT BUTTON ========== */
+.btn-next {
+    display: block;
+    margin: 28px auto 0;
+    padding: 12px 40px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #1565c0;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-next:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.btn-next:active {
+    transform: translateY(0);
+}
+
+/* ========== RESULTS SCREEN ========== */
+.results-container {
+    text-align: center;
+}
+
+.results-container h1 {
+    color: #1a237e;
+    margin-bottom: 8px;
+}
+
+.score-text {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.percentage-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1565c0;
+    margin: 8px 0;
+}
+
+.message-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 28px;
+}
+
+/* ========== REVIEW LIST ========== */
+.review-list {
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.review-item {
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.review-correct {
+    background-color: #e8f5e9;
+    border-left: 4px solid #43a047;
+}
+
+.review-wrong {
+    background-color: #ffebee;
+    border-left: 4px solid #e53935;
+}
+
+.review-question {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #212121;
+    margin-bottom: 4px;
+}
+
+.review-icon {
+    margin-right: 6px;
+}
+
+.review-answer {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 24px 20px;
+    }
+
+    .quiz-container h1 {
+        font-size: 1.4rem;
+    }
+
+    .question-text {
+        font-size: 1.05rem;
+    }
+
+    .percentage-text {
+        font-size: 2.2rem;
+    }
+
+    .btn-start,
+    .btn-next {
+        width: 100%;
+    }
+}
